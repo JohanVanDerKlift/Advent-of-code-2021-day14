@@ -204,9 +204,10 @@ let insertions = [
   'S'
 ]
 
+// let array = ["N", "N", "C", "B"];
 let polymerTemplate = "VHCKBFOVCHHKOHBPNCKO";
 let array = polymerTemplate.split("");
-console.log(array);
+// console.log(testCase);
 
 function numberOfCycles(n) {
   let temp = [array[0]];
@@ -235,25 +236,75 @@ let outcome = numberOfCycles(10);
 // });
 console.log(outcome);
 
-function getMax(array) {
-  let count = 1;
-  let tempCount = 0;
-  let item;
-  for (let i=0; i<array.length; i++)
-  {
-    for (let j=i; j<array.length; j++)
-    {
-      if (array[i] === array[j])
-        tempCount++;
-      if (count<tempCount)
-      {
-        count=tempCount;
-        item = array[i];
-      }
+function getCount(array) {
+  // let count = 1;
+  // let tempCount = 0;
+  // let item;
+  // for (let i=0; i<array.length; i++)
+  // {
+  //   for (let j=i; j<array.length; j++)
+  //   {
+  //     if (array[i] === array[j])
+  //       tempCount++;
+  //     if (count<tempCount)
+  //     {
+  //       count=tempCount;
+  //       item = array[i];
+  //     }
+  //   }
+  //   tempCount=0;
+  // }
+  // return (`Item: ${item} count: ${count}`);
+  let count_b = 0;
+  let count_c = 0;
+  let count_f = 0;
+  let count_h = 0;
+  let count_k = 0;
+  let count_n = 0;
+  let count_p = 0;
+  let count_o = 0;
+  let count_s = 0;
+  let count_v = 0;
+
+  array.map((char) => {
+    switch (char) {
+      case "B":
+        count_b++;
+        break;
+      case "C":
+        count_c++;
+        break;
+      case "F":
+        count_f++;
+        break;
+      case "H":
+        count_h++;
+        break;
+      case "K":
+        count_k++;
+        break;
+      case "N":
+        count_n++;
+        break;
+      case "P":
+        count_p++;
+        break;
+      case "O":
+        count_o++;
+        break;
+      case "S":
+        count_s++;
+        break;
+      case "V":
+        count_v++;
+        break;
     }
-    tempCount=0;
-  }
-  return (`Item: ${item} count: ${count}`);
+  })
+  return [count_b, count_c, count_f, count_h,  count_k, count_n, count_p, count_o, count_s, count_v];
 }
 
-console.log(getMax(array));
+
+// BCFHKNPOV
+
+console.log(getCount(outcome));
+
